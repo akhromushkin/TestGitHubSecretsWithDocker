@@ -21,4 +21,4 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - run: docker build . --file Dockerfile --build-arg DX_NUGET_URL="${{ secrets.DX_NUGET_URL }}" --tag some/image:image-api
+    - run: docker build . --file Dockerfile --build-arg DX_NUGET_URL=test --tag some/image:image-api
