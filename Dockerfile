@@ -1,4 +1,5 @@
 # FROM mcr.microsoft.com/dotnet/sdk:5.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 ARG DX_NUGET_URL
 ARG ARG_DX_NUGET_URL=arg_test
 ENV ENV_DX_NUGET_URL=env_test
