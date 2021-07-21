@@ -22,6 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - shell: bash
-    env:
-      SUPER_SECRET: ${{ secrets.DX_NUGET_URL }}
+      env:
+        SUPER_SECRET: ${{ secrets.DX_NUGET_URL }}
       run: docker build . --file Dockerfile --build-arg ARG_DX_NUGET_URL=$SUPER_SECRET --tag some/image:image-api
