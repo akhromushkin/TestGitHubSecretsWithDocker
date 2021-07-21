@@ -18,7 +18,10 @@ env:
 jobs:
   run_docker:
     name: test secrets
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: docker build . --file Dockerfile --build-arg DX_NUGET_URL=test --tag some/image:image-api
+    - shell: bash
+      env:
+        SUPER_SECRET: ${{ secrets.DX_NUGET_URL }}
+      run: docker build . --file Dockerfile --build-arg ARG_DX_NUGET_URL=$SUPER_SECRET --tag some/image:image-api
